@@ -40,11 +40,11 @@ function namedFunctions() {
   
   //  anonymous()
   
-  var anonymous = function () {}
+  var anonymousFunction = function () {}
 
   return {
     normalFunction: normalFunction,
-    anonymousFunction: anonymous,
+    anonymousFunction: anonymousFunction,
     // lo anterior es igual a esto por eso pasa la prueba
     // anonymousFunction: function () {}
   }
@@ -94,7 +94,7 @@ function expressionFunctions() {
   */
 
   // return function(){}
-  return function named(){}
+  return function () {}
 }
 
 module.exports = {

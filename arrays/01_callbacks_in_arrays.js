@@ -15,13 +15,13 @@ function filter(array, callback){
 	const newArray = [];
 
 //  SOLUCIÓN
-// 	for (let index = 0; index < arrayLength; index++) {
-//    // ACÁ UTILIZAMOS EL CALLBACK
-// 		const isIncluded = callback(array[index], index, array);     // ACÁ UTILIZAMOS EL RESULTADO DEL CALLBACK PARA REALIZAR EL FILTRO 
-//    if (isIncluded) {
-// 			newArray.push(array[index]);
-// 		}
-//   }
+	for (let index = 0; index < arrayLength; index++) {
+   // ACÁ UTILIZAMOS EL CALLBACK
+		const isIncluded = callback(array[index], index, array);     // ACÁ UTILIZAMOS EL RESULTADO DEL CALLBACK PARA REALIZAR EL FILTRO 
+   if (isIncluded) {
+			newArray.push(array[index]);
+		}
+  }
   return newArray;
 }
 
@@ -40,7 +40,7 @@ function map(array, callback){
 	const newArray = [];
 
 	for (let index = 0; index < arrayLength; index++) {
-    // ACÁ UTILIZAMOS EL CALLBACK
+    newArray.push(callback(array[index], index, array))
   }
   return newArray;
 }

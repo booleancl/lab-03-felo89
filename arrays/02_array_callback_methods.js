@@ -10,14 +10,14 @@ var users = [
 function filterByAdults() {
 
   // con ciclos normales
-  var adults = []
-  for (let index = 0; index < users.length; index++) {
-    var user = users[index]
-    if (user.age >= 18) {
-      //  adults.push(user)
-    }
-  }
-  return adults
+  // var adults = []
+  // for (let index = 0; index < users.length; index++) {
+  //   var user = users[index]
+  //   if (user.age >= 18) {
+  //     adults.push(user)
+  //   }
+  // }
+  // return adults
 
   /*
     con callbacks de los Array
@@ -27,11 +27,11 @@ function filterByAdults() {
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods
   */
   // filter abstrae todo lo escrito anteriormente excepto lo definido en al algoritmo anterior en el if (user.age >= 18)
-  // var adults = users.filter(function(user, index) {
-  //   return user.age >= 18
-  // })
+  var adults = users.filter(function(user) {
+    return user.age >= 18
+  })
 
-  // return adults
+  return adults
 }
 
 /*
@@ -45,20 +45,21 @@ function getListsByAge() {
   var isAdult = function(age) {
     return age >=18
   }
-  var listWithBeverages = users.map(function() {
+  var listWithBeverages = users.map(function(user) {
     //aprovecha la función isAdult
     //puedes MUTAR EL VALOR para agregar la nueva propiedad y luego retornar el valor ya modificado
-    return
+    user.freeBeverage = isAdult(user.age) ? 'Alcohol' : 'Juice'
+    return user
   })
 
   return {
     //¿Qué argumentos recibirá la función filter y que DEBE devolver?
     // 👀 👀  --> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-    adultsPeople: listWithBeverages.filter(function() {
-      return //aprovecha la función isAdult
+    adultsPeople: listWithBeverages.filter(function(user) {
+      return isAdult(user.age)
     }),
-    underagePeople: listWithBeverages.filter(function() {
-      return //aprovecha la función isAdult y el operador !
+    underagePeople: listWithBeverages.filter(function(user) {
+      return !isAdult(user.age)
     }),
   }
 }

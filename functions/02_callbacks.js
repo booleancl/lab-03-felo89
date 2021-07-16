@@ -16,10 +16,10 @@ function useCallbacksAsDataType() {
   }
   var processes = [
     function(){
-      return 'Callbacks';
+      return 'Callbacks ';
     },
     function(){
-      return 'are'
+      return 'are '
     },
     function(){
       return 'powerful'
@@ -56,7 +56,7 @@ function useCallbacksAsDataType() {
       return newArray
     }
 
-    formatRutsInEmployees() {
+    formatRutsInEmployees(users) {
       //  -- código común: recorrer el arreglo
       var newArray = []
       for(var index = 0; index < users.length; index++) {
@@ -150,8 +150,8 @@ function forEach(array, callback) {
   
   for(var index = 0; index < array.length; index++) {
     // algo falta acá. la idea de delegar esta operación es que la función tenga disponible los argumentos necesarios para llevar a cabo su responsabilidad.
-    var actualValue
-    var actualIndex
+    var actualValue = array[index]
+    var actualIndex = index
     callback(actualValue, actualIndex)
   }
 }
